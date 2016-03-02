@@ -1,0 +1,23 @@
+{
+  "name": "pull-json-doubleline",
+  "description": "",
+  "version": "0.0.0",
+  "homepage": "https://github.com/dominictarr/pull-json-doubleline",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/dominictarr/pull-json-doubleline.git"
+  },
+  "dependencies": {
+    "pull-split": "^0.2.0",
+    "pull-stringify": "^1.2.2"
+  },
+  "devDependencies": {
+    "pull-stream": "^3.2.0",
+    "tape": "^4.4.0"
+  },
+  "scripts": {
+    "test": "set -e; for t in test/*.js; do node $t; done"
+  },
+  "author": "Dominic Tarr <dominic.tarr@gmail.com> (http://dominictarr.com)",
+  "license": "MIT"
+}
