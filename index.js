@@ -1,5 +1,6 @@
 var Stringify = require('pull-stringify')
 var Split = require('pull-split')
+var pull = require('pull-stream/pull')
 
 var p = require('is-pull-stream')
 
