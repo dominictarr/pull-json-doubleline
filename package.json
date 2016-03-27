@@ -8,6 +8,7 @@
     "url": "git://github.com/dominictarr/pull-json-doubleline.git"
   },
   "dependencies": {
+    "is-pull-stream": "0.0.0",
     "pull-split": "^0.2.0",
     "pull-stringify": "^1.2.2"
   },
