@@ -13,6 +13,7 @@
     "pull-stringify": "^1.2.2"
   },
   "devDependencies": {
+    "pull-pair": "^1.1.0",
     "pull-stream": "^3.2.0",
     "tape": "^4.4.0"
   },
