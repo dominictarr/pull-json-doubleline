@@ -7,26 +7,37 @@ which is more human readable.
 ## example
 
 ``` js
-var JSONDL = require('pull-json-doubleline')
+var pullJson = require('pull-json-doubleline')
 
 pull(
   source,
-  JSONDL.stringify(),
-  JSONDL.parse(),
+  pullJson.stringify(),
+  pullJson.parse(),
   sink
 )
 ```
 
 ## api
 
-### JSONDL.stringify() => through
+### `pullJson = require('pull-json-doubleline')`
 
-stringify a stream
+### `pullJson.stringify() => through`
 
-### JSONDL.parse() => through
+stringify a stream of objects into double newline delimited json strings.
 
+### `pullJson.parse() => through`
 
-### JSONDL(objet_duplex) => serialized_duplex
+transform a stream of double newline delimited json strings into objects.
+
+### `pullJson(source) => decodedSource`
+
+decode a source stream of json buffers, return a source stream of objects.
+
+### `pullJson(sink) => decodedSource`
+
+encode a sink stream for json buffers, return a sink stream for objects.
+
+### `pullJson(objectDuplex) => serializedDuplex`
 
 encode/decode around a duplex stream of json buffers,
 return a stream that can be piped to a io steam.
