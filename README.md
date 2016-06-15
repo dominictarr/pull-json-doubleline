@@ -33,7 +33,7 @@ transform a stream of double newline delimited json strings into objects.
 
 decode a source stream of json buffers, return a source stream of objects.
 
-### `pullJson(sink) => decodedSource`
+### `pullJson(sink) => encodedSink`
 
 encode a sink stream for json buffers, return a sink stream for objects.
 
