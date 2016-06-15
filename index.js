@@ -1,6 +1,8 @@
 var stringify = require('pull-stringify')
 var split = require('pull-split')
 var pull = require('pull-stream/pull')
+var map = require('pull-stream/throughs/map')
+var filter = require('pull-stream/throughs/filter')
 
 var p = require('is-pull-stream')
 
@@ -12,17 +14,10 @@ function duplex (stream) {
 }
 
 function parse () {
-  return split(
-    '\n\n',
-    function map (data) {
-      try {
-        return JSON.parse(data)
-      } catch (err) {
-        return err
-      }
-    },
-    null,
-    true // skip last value if it is an empty string ' '
+  return pull(
+    split('\n\n'),
+    filter(), // filter empty lines
+    map(JSON.parse)
   )
 }
 
