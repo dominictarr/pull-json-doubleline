@@ -24,8 +24,8 @@ function parse () {
 exports = module.exports = function (stream) {
   return (
     p.isSource(stream) ? pull(stream, parse())
-  : p.isSink(stream) ? pull(stringify(), stream)
-  : duplex(stream)
+  : p.isSink(stream)   ? pull(stringify(), stream)
+  :                      duplex(stream)
   )
 }
 
