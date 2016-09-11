@@ -36,3 +36,16 @@ test('stringify -> duplex -> parse', function (t) {
     })
   )
 })
+
+test('fails to parse invalid data', function (t) {
+  pull(
+    pull.values([
+      new Buffer('hey')
+    ]),
+    JSONDL.parse(),
+    pull.collect(function (err, ary) {
+      t.ok(err instanceof Error)
+      t.end()
+    })
+  )
+})
