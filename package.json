@@ -10,7 +10,7 @@
   "dependencies": {
     "is-pull-stream": "0.0.0",
     "pull-split": "^0.2.0",
-    "pull-stringify": "pull-stream/pull-stringify#v2"
+    "pull-stringify": "^2.0.0"
   },
   "devDependencies": {
     "pull-pair": "^1.1.0",
