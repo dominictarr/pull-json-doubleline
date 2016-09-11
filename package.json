@@ -10,18 +10,16 @@
   "dependencies": {
     "is-pull-stream": "0.0.0",
     "pull-split": "^0.2.0",
-    "pull-stream": "^3.2.0",
-    "pull-stringify": "^1.2.2",
-    "tape": "^4.5.1"
+    "pull-stream": "^3.4.5",
+    "pull-stringify": "^2.0.0"
   },
   "devDependencies": {
     "pull-pair": "^1.1.0",
-    "tape": "^4.4.0"
+    "tape": "^4.5.1"
   },
   "scripts": {
-    "test": "set -e; for t in test/*.js; do node $t; done"
+    "test": "tape test.js"
   },
   "author": "Dominic Tarr <dominic.tarr@gmail.com> (http://dominictarr.com)",
   "license": "MIT"
 }
-

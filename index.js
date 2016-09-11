@@ -1,6 +1,8 @@
-var Stringify = require('pull-stringify')
-var Split = require('pull-split')
+var stringify = require('pull-stringify')
+var split = require('pull-split')
 var pull = require('pull-stream/pull')
+var map = require('pull-stream/throughs/map')
+var filter = require('pull-stream/throughs/filter')
 
 var p = require('is-pull-stream')
 
@@ -11,12 +13,12 @@ function duplex (stream) {
   }
 }
 
-function stringify () {
-  return Stringify('', '\n', '\n\n', 2)
-}
-
 function parse () {
-  return Split('\n\n', JSON.parse)
+  return pull(
+    split('\n\n'),
+    filter(), // filter empty lines
+    map(JSON.parse)
+  )
 }
 
 exports = module.exports = function (stream) {
